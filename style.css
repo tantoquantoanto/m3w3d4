@@ -169,9 +169,25 @@ nav {
 .saving {
     font-size: 24px; /* Assicura che l'icona sia delle giuste dimensioni */
     color: grey; /* Colore dell'icona */
-    transition: color 0.3s ease;
+    position: relative;
+    
+    
 }
 
-.saving:hover {
-    color: green; /* Colore dell'icona al passaggio del mouse */
+
+.saving::after {
+ position: absolute;
+ content: "";
+ top: 0;
+ left: 0;
+ height: 45%;
+ width: 45%;
+ transform: translate(45%, 30%);
+ background-color: grey;
+ z-index: -1;
+
+}
+
+.saving:hover::after {
+    z-index: 1;
 }
